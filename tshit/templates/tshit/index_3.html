@@ -1,0 +1,65 @@
+{% extends 'tshit/base.html' %}
+
+{% load static %}
+{% block title %}
+    <title>Tshirt Cropper</title>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="row" id="header-row">
+            <h1 id="page-name">TEXTURE EXTRACTOR</h1>
+            <div class="col-sm-12">
+                <button id="sel-file-btn" class="btn btn-lg btn-primary">Select File</button>
+                <input type="file" id="input" title=" " name="image" accept="image/*">
+            </div>
+        </div>
+        <div class="row">
+            {#            <div class="col-md-6">#}
+            {#                <div class="origin-image">#}
+            {#                </div>#}
+            {#            </div>#}
+            <div class="col-md-12">
+                <div id="processed-img">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12" id="btn_save">
+                <a class="btn btn-lg btn-primary" href="{% static 'tshit/img/result.png' %}" download="result.png"
+                   role="button">Save File</a>
+            </div>
+        </div>
+
+        <div class="alert" role="alert"></div>
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalLabel">Crop the image</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="img-container">
+                            <img id="image" src="">
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <button type="button" class="btn btn-primary" id="crop">Crop</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+    <script>
+        const btnSave = $("#btn_save");
+
+        let ajax_url = '{% url 'ajax_view' %}';
+        let result_img = '{% static 'tshit/img/result.png' %}';
+    </script>
+{% endblock %}

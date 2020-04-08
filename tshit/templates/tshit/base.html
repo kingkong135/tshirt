@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block title %}
+        <title>Tshirt</title>
+    {% endblock %}
+    <script src="{% static 'tshit/js/jquery-3.4.1.min.js' %}"></script>
+    <script src="{% static 'tshit/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'tshit/js/cropper.js' %}"></script>
+    <script src="{% static 'tshit/js/main.js' %}"></script>
+
+    <link rel="stylesheet" type="text/css" href="{% static 'tshit/css/bootstrap.min.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'tshit/css/cropper.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'tshit/css/style.css' %}">
+</head>
+
+<body>
+{% block content %}
+{% endblock %}
+{% block script %}
+{% endblock %}
+</body>
+
+</html>

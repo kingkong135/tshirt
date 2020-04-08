@@ -1,0 +1,41 @@
+{% extends 'tshit/base.html' %}
+
+{% load static %}
+{% block title %}
+    <title>Tshirt Cropper</title>
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <h1>Customize preview for Cropper</h1>
+        <div class="row">
+            <div class="col col-md-6">
+                <div class="box">
+                    <img id="image" src="{% static 'tshit/img/picture.jpg' %}" alt="Picture">
+                </div>
+            </div>
+            <div class="col col-md-6">
+                <div class="box">
+                    <div class="preview"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row" style="justify-content: center;">
+            <div class="input-group" style="margin: 20px">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01"
+                           aria-describedby="inputGroupFileAddon01">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                </div>
+            </div>
+{#            <button type="button" class="btn btn-primary" id="upload-btn">Upload</button>#}
+            <button type="button" class="btn btn-info" id="process-btn">Process</button>
+            <button type="button" class="btn btn-success" id="save-btn">Save</button>
+        </div>
+    </div>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
